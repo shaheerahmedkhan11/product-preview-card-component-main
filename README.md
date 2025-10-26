@@ -13,7 +13,7 @@
 
 ### Screenshot
 
-![Screenshot](./images/screenshot.png)
+![Screenshot](./product-preview-card-component-main/images/screenshot.png)
 
 ### Links
 
