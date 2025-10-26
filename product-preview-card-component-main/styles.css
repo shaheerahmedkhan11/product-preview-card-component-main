@@ -137,6 +137,7 @@ button {
 
 button:hover {
     box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
+    background-color:var(--Teal-Green-Dark);
 }
 
 button:active {
