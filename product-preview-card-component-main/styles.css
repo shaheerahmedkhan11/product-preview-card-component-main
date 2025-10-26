@@ -1,0 +1,166 @@
+:root {
+    /* COLORS */
+    --Teal-Green-Light: hsl(158, 36%, 37%);
+    --Teal-Green-Dark: hsl(158, 42%, 18%);
+    --Black: hsl(212, 21%, 14%);
+    --Grey: hsl(228, 12%, 48%);
+    --Cream: hsl(30, 38%, 92%);
+    --White: hsl(0, 0%, 100%);
+
+    /* FONTS */
+    --Fraunces: 'Fraunces', serif;
+    --Montserrat: 'Montserrat', sans-serif;
+
+    /* TYPOGRAPHY */
+    --FS-Body: 0.875rem;
+    --FW-Light: 500;
+    --FW-Bold: 700;
+
+    /* SPACING */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    /* TRANSITIONS */
+    --transition-default: 0.3s ease-in-out;
+}
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+    min-height: 100vh;
+    font-size: var(--FS-Body);
+    font-family: var(--Montserrat);
+    font-weight: var(--FW-Light);
+    background-color: var(--Cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-lg);
+}
+
+/* CARD CONTAINER */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--White);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 700px;
+    transition: box-shadow var(--transition-default), transform var(--transition-default);
+}
+
+.card-container:hover,
+.card-container:focus-within {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-container:active {
+    transform: scale(0.98);
+}
+
+.product-pic {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: var(--space-lg);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.label {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--Grey);
+    font-size: 0.75rem;
+}
+
+.product-title {
+    font-family: var(--Fraunces);
+    font-size: 2.2rem;
+    color: var(--Teal-Green-Dark);
+    line-height: 1.2;
+}
+
+.product-description {
+    color: var(--Grey);
+    line-height: 1.5;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.discount {
+    font-family: var(--Fraunces);
+    font-size: 2rem;
+    font-weight: var(--FW-Bold);
+    color: var(--Teal-Green-Light);
+}
+
+.original {
+    text-decoration: line-through;
+    color: var(--Grey);
+}
+
+button {
+    cursor: pointer;
+    padding: var(--space-md);
+    color: var(--White);
+    font-family: inherit;
+    font-weight: var(--FW-Bold);
+    background-color: var(--Teal-Green-Light);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.1s ease-in-out, box-shadow var(--transition-default);
+}
+
+button:hover {
+    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: 3px solid var(--Teal-Green-Dark);
+    outline-offset: 2px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        max-width: 90%;
+    }
+
+    .product-pic,
+    .card-details {
+        width: 100%;
+    }
+
+    .product-title {
+        font-size: 1.8rem;
+    }
+}
